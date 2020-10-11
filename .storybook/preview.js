@@ -6,8 +6,16 @@
 import React from 'react';
 import {ThemeProvider} from 'styled-components'
 import theme from '../src/theme'
-import { addDecorator } from '@storybook/react'
+import { addDecorator,addParameters } from '@storybook/react'
+import "story.css"
 
 addDecorator((storyFn) => {
- return <ThemeProvider theme={theme}>{storyFn()} </ThemeProvider>
-})
+    return <ThemeProvider theme={theme}>{storyFn()} </ThemeProvider>
+});
+
+addParameters({
+    options: {
+        showRoots: true,
+    }
+});
+

@@ -1,40 +1,39 @@
 import styled,{css} from 'styled-components'
-
+import {circle} from 'utils/mixins'
 
 const circleMixinFunc = (color,size="8px") => css`
     position:absolute;
     content:"";
     display:block;
-    width:${size};
-    height:${size};
-    border-radius:50%;
-    background-color:${color};
+   ${circle(color,size)}
 `
 
 
 const StyledAvatar = styled.div`
-position:relative;
+  position: relative;
 `;
 
 const StatusIcon = styled.div`
-position:absolute;
-left:2px;
-top:4px;
+  position: absolute;
+  left: 2px;
+  top: 4px;
 
-&::before {
-   ${({size})=> circleMixinFunc("white",size)}
-    transform:scale(2)
-}
-&::after{
-     ${ ({ theme, status, size }) => {
-    if (status === "online") {
-       return circleMixinFunc(theme.green,size)
-    } else if (status === "offline") {
-      return  circleMixinFunc(theme.gary,size)
-    } 
-}
-    }
-}
+  &::before {
+    ${({ size }) => circleMixinFunc("white", size)}
+
+    transform: scale(2);
+
+  }
+
+  &::after {
+    ${({ theme, status, size }) => {
+      if (status === "online") {
+        return circleMixinFunc(theme.green, size);
+      } else if (status === "offline") {
+        return circleMixinFunc(theme.gray, size);
+      }
+    }}
+  }
 `;
 
 const AvatarClip = styled.div`
