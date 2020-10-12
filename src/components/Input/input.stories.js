@@ -18,5 +18,4 @@ export const Search = () => <Input.Search />
 export const WithAffix = () => <Input prefix={<Icon icon={ClipIcon} color="#ccc" />}
 suffix={<Icon icon={SmileIcon} color="#ccc" /> }
 
-
 />

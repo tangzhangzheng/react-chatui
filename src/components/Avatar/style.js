@@ -7,22 +7,16 @@ const circleMixinFunc = (color,size="8px") => css`
     display:block;
    ${circle(color,size)}
 `
-
-
 const StyledAvatar = styled.div`
   position: relative;
 `;
-
 const StatusIcon = styled.div`
   position: absolute;
   left: 2px;
   top: 4px;
-
   &::before {
     ${({ size }) => circleMixinFunc("white", size)}
-
     transform: scale(2);
-
   }
 
   &::after {
