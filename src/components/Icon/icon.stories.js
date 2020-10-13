@@ -1,8 +1,8 @@
 import React from 'react'
 import Icon from './index'
-import {ReactComponent as smileIcon} from 'assets/icon/smile.svg'
+import { ReactComponent as smileIcon } from 'assets/icon/smile.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faCommentDots,faStickyNote,faFolder} from '@fortawesome/free-solid-svg-icons'
+import { faCommentDots, faStickyNote, faFolder } from '@fortawesome/free-solid-svg-icons'
 
 export default {
     title: "UI 组件/Icon",
@@ -22,15 +22,28 @@ export const FontAwesome = () => {
     return <FontAwesomeIcon icon={faCommentDots} />
 }
 export const FontAwesomeColor = () => {
-    return <FontAwesomeIcon icon={faCommentDots} style={{color: '#ccc'}} />
+    return <FontAwesomeIcon icon={faCommentDots} style={{ color: '#ccc' }} />
 }
 export const FontAwesomeSizes = () => {
     return (
         <div>
             <FontAwesomeIcon icon={faFolder} style={{ fontSize: '24px' }} />
-            <FontAwesomeIcon icon={faStickyNote} style={{fontSize: '36px'}} />
-            <FontAwesomeIcon icon={faCommentDots} style={{fontSize: '48px'}} />
+            <FontAwesomeIcon icon={faStickyNote} style={{ fontSize: '36px' }} />
+            <FontAwesomeIcon icon={faCommentDots} style={{ fontSize: '48px' }} />
         </div>
     )
+}
 
+export const ColorTest = () => {
+    return (
+        <div>
+
+            <Icon.Social
+                icon={faStickyNote}
+                bgColor="black"
+                href="https://www.baidu.com"
+            />
+
+        </div>
+    )
 }

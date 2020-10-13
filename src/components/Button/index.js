@@ -7,13 +7,13 @@ function Button({ children,
   size = "30px",
   shape = "circle",
   bgColor,
-  
+
   ...rest }) {
-    return (
-        <StyledButton type={type} size={size} shape={shape} bgColor={bgColor} {...rest}>
-           {children}
-        </StyledButton>
-    )
+  return (
+    <StyledButton type={type} size={size} shape={shape} bgColor={bgColor} {...rest}>
+      {children}
+    </StyledButton>
+  )
 }
 
 

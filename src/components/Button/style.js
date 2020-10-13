@@ -1,4 +1,4 @@
-import styled,{css} from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const shapeVariants = {
     circle: css`
@@ -25,9 +25,9 @@ const StyledButton = styled.button`
     outline:none;
     cursor:pointer;
     box-shadow:0px 6px 12px rgba(0,0,0,0.1);
-    ${({ shape }) => shapeVariants[shape]}
-    ${({type}) => typeVariants[type]}
-    ${({ bgColor }) => `background-color:${bgColor}`}
+    ${({ shape }) => shapeVariants[shape]};
+    ${({ type }) => typeVariants[type]};
+    ${({ bgColor }) => `background-color:${bgColor}`};
     
     transform:scale(1);
     transition:0.4s;
