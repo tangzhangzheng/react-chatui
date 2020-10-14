@@ -15,6 +15,7 @@ const ContactSection = styled.section`
 
 const AlbumSection = styled.section``;
 
+
 const AlbumTitle = styled.div`
     justify-self:stretch;
     display:flex;

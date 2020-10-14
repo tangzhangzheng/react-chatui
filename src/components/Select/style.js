@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import CaretDown from 'assets/icon/caret_down.svg'
-
+import CaretDown2 from 'assets/icon/caretDown2.svg'
 
 const StyledSelect = styled.select`
     appearance:none;
@@ -14,7 +14,14 @@ const StyledSelect = styled.select`
     color:${({ theme }) => theme.grayDark};
     ::-ms-expand{
         display:none;
-    }
+    };
+    ${({ type }) => type && typeVariants[type]};
 `;
+
+const typeVariants = {
+    form: css`
+        background-image:url(${CaretDown2})
+    `,
+}
 
 export default StyledSelect;

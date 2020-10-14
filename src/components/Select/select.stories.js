@@ -14,3 +14,12 @@ export const Default = () => (
         <Option>好友消息优先</Option>
     </Select>
 )
+
+export const FormSelect = () => {
+    return (
+        <Select type="form">
+            <Option>北京市</Option>
+            <Option>河北省</Option>
+        </Select>
+    )
+}

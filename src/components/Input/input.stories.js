@@ -9,13 +9,16 @@ export default {
     component: Input
 }
 
-export const Default = () => <Input /> 
+export const Default = () => <Input />
 
 
 export const Search = () => <Input.Search />
 
 
 export const WithAffix = () => <Input prefix={<Icon icon={ClipIcon} color="#ccc" />}
-suffix={<Icon icon={SmileIcon} color="#ccc" /> }
+    suffix={<Icon icon={SmileIcon} color="#ccc" />}
 
 />
+
+export const InputTextWithLabel = () => <Input.Text label="昵称" />
+export const InputTextWithoutLabel = () => <Input.Text />
