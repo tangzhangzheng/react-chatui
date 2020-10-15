@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import StyledNavBar, { StyledMenuItem, MenuIcon, MenuItems,AvatarItem } from "./style";
+import StyledNavBar, { StyledMenuItem, MenuIcon, MenuItems, AvatarItem } from "./style";
 import Badge from "components/Badge";
 import Avatar from "components/Avatar";
 
@@ -19,9 +19,7 @@ import "styled-components/macro";
 function NavBar({ ...rest }) {
   return (
     <StyledNavBar {...rest}>
-      <AvatarItem >
-        <Avatar src={profileImage} status="online" />
-      </AvatarItem>
+      <Avatar src={profileImage} status="online" />
       <MenuItems>
         <MenuItem showBadge active icon={faCommentDots} />
         <MenuItem icon={faUsers} />

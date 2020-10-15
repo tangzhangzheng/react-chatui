@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { activeBar } from "utils/mixins";
-import StyledAvatar, { StatusIcon } from "components/Avatar/style";
+import { StyledAvatar, StatusIcon } from "components/Avatar/style";
 
 const StyledMenuItem = styled.div`
   & > a {
@@ -29,18 +29,18 @@ const StyledNavBar = styled.nav`
   height: 100vh;
   background-color: ${({ theme }) => theme.darkPurple};
   padding: 30px 0;
-`;
 
-const AvatarItem = styled.div`
- ${StatusIcon} {
+   ${StatusIcon} {
       &::before {
         background-color: ${({ theme }) => theme.darkPurple};
       }
     }
-${StyledAvatar}{
+   ${StyledAvatar}{
     justify-self: center;
 }
 `;
+
+
 
 
 const MenuItems = styled.div`
@@ -50,4 +50,4 @@ const MenuItems = styled.div`
 
 export default StyledNavBar;
 
-export { MenuIcon, StyledMenuItem, MenuItems ,AvatarItem};
+export { MenuIcon, StyledMenuItem, MenuItems };

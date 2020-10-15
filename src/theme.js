@@ -21,5 +21,7 @@ export default {
     inactiveColor: "rgba(41,47,76,0.3)",
     inactiveColorDark: "white",
     gray4: "#EFECE8",
-    gray5: "#D8D8D8"
+    gray5: "#D8D8D8",
+    grediantGray:
+        "linear-gradient(119.19deg,#FFFFFF 0%,#F8F8F8 65.34%,#FFFFFF 100%)",
 }
