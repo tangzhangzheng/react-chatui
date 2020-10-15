@@ -13,10 +13,10 @@ import Seperator from 'components/Seperator/index'
 import Dropdown from 'components/Dropdown/index'
 import { DropdownItem } from "components/Dropdown/style"
 
-function TitleBar({ children, ...rest }) {
+function TitleBar({ onVideoClick, onAvatarClick, children, style, animeProps, ...rest }) {
     return (
-        <StyledTitleBar {...rest}>
-            <Avatar src={face} status="offline" />
+        <StyledTitleBar style={{ ...style, ...animeProps }} {...rest}>
+            <Avatar onClick={onAvatarClick} src={face} status="offline" />
             <Title>
                 <Paragraph size="large">慕容天宇</Paragraph>
                 <Paragraph type="secondary">
@@ -25,7 +25,7 @@ function TitleBar({ children, ...rest }) {
                 </Paragraph>
             </Title>
             <Actions>
-                <Icon opacity={0.3} icon={Call} />
+                <Icon opacity={0.3} icon={Call} onClick={onVideoClick} />
                 <Icon opacity={0.3} icon={Camera} />
                 <Dropdown content={
                     <>

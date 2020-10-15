@@ -1,7 +1,9 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Nav = styled.nav`
     flex-shrink: 0;
+    position:relative;
+    z-index:100;
 
 `;
 
@@ -11,6 +13,14 @@ const Sidebar = styled.aside`
     height:100vh;
     flex:1;
     background:${({ theme }) => theme.grediantGray};
+
+    position:relative;
+    z-index:50;
+    > div {
+        will-change:transform,opacity;
+        position:absolute;
+        width:100%;
+    }
 `;
 
 const Content = styled.main`
@@ -20,7 +30,14 @@ const Content = styled.main`
 
 const Drawer = styled.div`
     max-width:310px;
-
+    width:0;
+    transform:translateX(200px);
+    transition:transform 0.4s;
+    will-change:width,transform;
+    ${({ show }) => show && css`width:initial;
+        transform:translateX(0px);
+    
+    `};
 `;
 
 const StyledChatApp = styled.div`

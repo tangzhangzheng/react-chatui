@@ -6,29 +6,30 @@ import Icon from "components/Icon"
 import Text from "components/Text"
 import face from "assets/images/face-male-4.jpg"
 import { ReactComponent as closeCircle } from "assets/icon/closeCircle.svg"
-
+import { useHistory } from 'react-router-dom'
+import "styled-components/macro";
+import blockedData from "data/blocked"
 
 function BlockList({ children, ...rest }) {
+  const history = useHistory();
   return (
     <StyledBlockList {...rest}>
       <SettingsMenu>
         <Icon icon={ArrowMenuLight}
           css={`cursor:pointer;`}
+          onClick={() => history.goBack()}
         />
         <Text size="xxlarge">已屏蔽好友</Text>
       </SettingsMenu>
       <FriendList>
-        {new Array(8).fill(0).map((_, i) => {
-          return (<ClosableAvatar key={i}>
-            <BlockedAvatar size="105px" src={face} />
+        {blockedData.map((blocked, index) => {
+          return (<ClosableAvatar key={blocked.id}>
+            <BlockedAvatar size="105px" src={blocked.avatar} />
             <CloseIcon width={46} height={51} icon={closeCircle} />
-            <BlockedName>李浩</BlockedName>
+            <BlockedName>{blocked.name}</BlockedName>
           </ClosableAvatar>)
         })}
-
       </FriendList>
-
-
     </StyledBlockList>
   )
 }

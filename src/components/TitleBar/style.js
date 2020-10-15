@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import StyledIcon from 'components/Icon/style'
+import { animated } from 'react-spring'
 
-const StyledTitleBar = styled.div`
+const StyledTitleBar = styled(animated.div)`
     display:grid;
     grid-template-columns:62px 1fr 112px;
     padding:30px;
@@ -21,4 +22,4 @@ const Actions = styled.div`
 `;
 
 export default StyledTitleBar;
-export {Title,Actions}
+export { Title, Actions }

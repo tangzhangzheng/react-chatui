@@ -20,16 +20,17 @@ const fileIcons = {
 
 }
 
-function FileCard({ children, ...rest }) {
+function FileCard({ children, fileProps, ...rest }) {
+
   return (
-    <StyledFileCard {...rest}>
+    <StyledFileCard fileProps={fileProps} {...rest}>
       <FileIcon icon={FileZip} />
-      <FileName>Source Code.zip</FileName>
-      <FileSize>1.5M</FileSize>
+      <FileName>{fileProps.name}</FileName>
+      <FileSize>{fileProps.size}</FileSize>
       <Options>
         <Icon icon={OptionIcon} opacity={0.3} />
       </Options>
-      <Time>2019年02月03日</Time>
+      <Time>{fileProps.updatedAt}</Time>
     </StyledFileCard>
   )
 }

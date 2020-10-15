@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import StyledNavBar, { StyledMenuItem, MenuIcon, MenuItems, AvatarItem } from "./style";
+import StyledNavBar, { StyledMenuItem, MenuIcon, MenuItems } from "./style";
 import Badge from "components/Badge";
 import Avatar from "components/Avatar";
-
+import { Link, matchPath, useLocation } from "react-router-dom"
 import profileImage from "assets/images/face-male-1.jpg";
 import {
   faCommentDots,
@@ -21,12 +21,13 @@ function NavBar({ ...rest }) {
     <StyledNavBar {...rest}>
       <Avatar src={profileImage} status="online" />
       <MenuItems>
-        <MenuItem showBadge active icon={faCommentDots} />
-        <MenuItem icon={faUsers} />
-        <MenuItem icon={faFolder} />
-        <MenuItem icon={faStickyNote} />
+        <MenuItem to="/" showBadge icon={faCommentDots} />
+        <MenuItem to="/contacts" icon={faUsers} />
+        <MenuItem to="/files" icon={faFolder} />
+        <MenuItem to="/notes" icon={faStickyNote} />
         <MenuItem icon={faEllipsisH} />
         <MenuItem
+          to="/settings"
           icon={faCog}
           css={`
             align-self: end;
@@ -37,14 +38,19 @@ function NavBar({ ...rest }) {
   );
 }
 
-function MenuItem({ icon, active, showBadge, ...rest }) {
+function MenuItem({ to, icon, showBadge, ...rest }) {
+  const Loc = useLocation();
+  const active = !!matchPath(Loc.pathname, {
+    path: to,
+    exact: to === "/",
+  })
   return (
     <StyledMenuItem active={active} {...rest}>
-      <a href="#">
+      <Link to={to}>
         <Badge show={showBadge}>
           <MenuIcon active={active} icon={icon} />
         </Badge>
-      </a>
+      </Link>
     </StyledMenuItem>
   );
 }

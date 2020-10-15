@@ -2,15 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import StyledContactCard, { Name, Intro } from './style'
 import Avatar from 'components/Avatar'
-import face from 'assets/images/face-female-1.jpg'
 
 
-function ContactCard({ children, ...rest }) {
+
+function ContactCard({ contactsData, children, ...rest }) {
   return (
     <StyledContactCard {...rest}>
-      <Avatar src={face} status="online" />
-      <Name>李浩</Name>
-      <Intro>我是前端工程师</Intro>
+      <Avatar src={contactsData.avatar} status="online" />
+      <Name>{contactsData.name}</Name>
+      <Intro>{contactsData.intro}</Intro>
     </StyledContactCard>
   )
 }

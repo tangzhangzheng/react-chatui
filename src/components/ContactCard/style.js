@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Paragraph from 'components/Paragraph'
-import StyledAvatar from 'components/Avatar/style'
+import { StyledAvatar } from 'components/Avatar/style'
 import { card } from "utils/mixins"
 
 const Name = styled(Paragraph).attrs({ size: "large" })`

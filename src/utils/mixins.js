@@ -1,4 +1,4 @@
-import {css} from 'styled-components'
+import { css } from 'styled-components'
 
 
 export const circle = (color, size = "8px") => css`
@@ -17,6 +17,7 @@ content:"";
 position:absolute;
 height:100%;
 left:0;
+transition:0.4s cubic-bezier(0.16,1,0.3,1);
 }
 &::before {
 width:${barWidth};
